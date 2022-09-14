@@ -9,6 +9,7 @@ import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import ImgList from "./ImgList";
 import TopBar from "./TopBar";
+import { alignProperty } from "@mui/material/styles/cssUtils";
 
 function Copyright() {
   return (
@@ -40,7 +41,7 @@ export default function Album() {
           }}
         >
           <Container maxWidth="md">
-            <Stack>
+            <Box>
               <Typography
                 component="h1"
                 variant="h2"
@@ -69,7 +70,7 @@ export default function Album() {
                 </p>
               </Typography>
               <ImgList style={{ align: "center" }} />
-            </Stack>
+            </Box>
             <Stack
               sx={{ pt: 4 }}
               direction="row"

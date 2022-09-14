@@ -1,15 +1,25 @@
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
+import feher_teher from "./Images/feher_teher.jpg"
+import narancs_teher from "./Images/narancs_teher.jpg"
+import narancs_teher_h from "./Images/narancs_teher_h.jpg"
+import piros_teher from "./Images/piros_teher.jpg"
+import zold_teher from "./Images/zold_teher.jpg"
+import fekete_teher from "./Images/fekete_teher.jpg"
 
 export default function StandardImageList() {
+
+ 
   return (
-    <ImageList cols={6} rowHeight={250}>
+    <ImageList
+    variant="masonry"
+    cols="3"
+    rowHeight="200">
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
           <img
-            src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-            srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-            alt={item.title}
+            src={item.img}
+           alt=""
             loading="lazy"
           />
         </ImageListItem>
@@ -17,31 +27,25 @@ export default function StandardImageList() {
     </ImageList>
   );
 }
-
-// todo: add actual truck images
 const itemData = [
+ 
   {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-    title: "Breakfast",
+    img: piros_teher,
   },
   {
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-    title: "Burger",
+    img: zold_teher,
   },
   {
-    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-    title: "Camera",
+    img: narancs_teher,
   },
   {
-    img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-    title: "Coffee",
+    img: narancs_teher_h,
   },
   {
-    img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
-    title: "Hats",
+    img: fekete_teher,
   },
   {
-    img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
-    title: "Honey",
+    img: feher_teher,
   },
+  
 ];

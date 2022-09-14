@@ -10,6 +10,8 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import logo_full from "./Images/duck full logo wht.png"
+import logo_head from "./Images/duck head wht.png"
 
 const pages = ["Kezdőlap", "Autóink", "Áraink", "Szerviz", "Kapcsolat"];
 
@@ -28,7 +30,7 @@ const ResponsiveAppBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+        <Box sx={{display: { xs: "none", md: "flex" }, mr: 1 }}> <img style={{width:"3vw"}} src={logo_full}  /></Box>
           <Typography
             variant="h6"
             noWrap
@@ -44,7 +46,7 @@ const ResponsiveAppBar = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            Duck Teherautó
             {/* todo: add duck face icon */}
           </Typography>
 
@@ -85,7 +87,6 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -102,7 +103,7 @@ const ResponsiveAppBar = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            Duck Teherautó
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (

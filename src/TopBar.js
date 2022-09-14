@@ -9,10 +9,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import logo_full from "./Images/duck full logo wht.png"
-import logo_head from "./Images/duck head wht.png"
-
 const pages = ["Kezdőlap", "Autóink", "Áraink", "Szerviz", "Kapcsolat"];
 
 const ResponsiveAppBar = () => {
@@ -30,7 +27,7 @@ const ResponsiveAppBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-        <Box sx={{display: { xs: "none", md: "flex" }, mr: 1 }}> <img style={{width:"3vw"}} src={logo_full}  /></Box>
+        <Box sx={{display: { xs: "none", md: "flex" }, mr: 1 }}> <img alt="" style={{width:"3vw"}} src={logo_full}  /></Box>
           <Typography
             variant="h6"
             noWrap

@@ -9,7 +9,6 @@ import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import ImgList from "./ImgList";
 import TopBar from "./TopBar";
-import { alignProperty } from "@mui/material/styles/cssUtils";
 
 function Copyright() {
   return (

@@ -9,10 +9,16 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import logo_full from "./Images/duck full logo wht.png"
-const pages = ["Kezdőlap", "Autóink", "Áraink", "Szerviz", "Kapcsolat"];
+import logo_full from "./Images/duck full logo wht.png";
+import { useNavigate } from "react-router-dom";
 
+const pages = [
+  { label: "Kezdőlap", route: "" },
+  { label: "Bérlés", route: "berles" },
+  { label: "Kapcsolat", route: "kapcsolat" },
+];
 const ResponsiveAppBar = () => {
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -23,11 +29,19 @@ const ResponsiveAppBar = () => {
     setAnchorElNav(null);
   };
 
+  const handleNavItemClick = (e) => {
+    handleCloseNavMenu();
+    navigate(`/${e.target.dataset.route}`);
+  };
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-        <Box sx={{display: { xs: "none", md: "flex" }, mr: 1 }}> <img alt="" style={{width:"3vw"}} src={logo_full}  /></Box>
+          <Box sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
+            {" "}
+            <img alt="" style={{ width: "3vw" }} src={logo_full} />
+          </Box>
           <Typography
             variant="h6"
             noWrap
@@ -44,7 +58,6 @@ const ResponsiveAppBar = () => {
             }}
           >
             Duck Teherautó
-            {/* todo: add duck face icon */}
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -76,10 +89,13 @@ const ResponsiveAppBar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {/* todo:add routing to pages */}
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem
+                  key={page.label}
+                  data-route={page.route}
+                  onClick={handleNavItemClick}
+                >
+                  <Typography textAlign="center">{page.label}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -88,7 +104,7 @@ const ResponsiveAppBar = () => {
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -105,11 +121,12 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={page.label}
+                data-route={page.route}
+                onClick={handleNavItemClick}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                {page.label}
               </Button>
             ))}
           </Box>

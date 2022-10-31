@@ -26,12 +26,12 @@ export default function Szerviz() {
         <Box>
           <Typography
             component="h1"
-            variant="h2"
+            variant="h3"
             align="center"
             color="text.primary"
             gutterBottom
           >
-            Iveco Daily Tehergépjárművek Szervizelése
+            Iveco Daily Tehergépjármű Szervizelés
           </Typography>
           <Typography
             variant="h5"

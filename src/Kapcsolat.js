@@ -3,6 +3,9 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Card from "@mui/material/Card";
+import PhoneIcon from "@mui/icons-material/Phone";
+import PinDropIcon from "@mui/icons-material/PinDrop";
+import StarIcon from "@mui/icons-material/Star";
 
 export default function Kapcsolat() {
   return (
@@ -13,17 +16,17 @@ export default function Kapcsolat() {
         pb: 6,
       }}
     >
-      <Container maxWidth="md">
-        <Box>
-          <Typography
-            component="h1"
-            variant="h4"
-            align="center"
-            color="text.primary"
-            gutterBottom
-          >
-            Vegye Fel Velünk a Kapcsolatot:
-          </Typography>
+      <Container maxWidth="sm">
+        <Typography
+          component="h1"
+          variant="h4"
+          align="center"
+          color="text.primary"
+          gutterBottom
+        >
+          Vegye Fel Velünk a Kapcsolatot:
+        </Typography>
+        <Container sx={{ width: "85%" }}>
           <Card raised>
             <Typography
               sx={{
@@ -36,14 +39,17 @@ export default function Kapcsolat() {
               align="center"
               color="text.primary"
             >
+              <StarIcon />
               Duck Teherautó Szervíz
               <br></br>
-              Keresztúri út 122
+              <PinDropIcon />
+              Budapest 1106 Keresztúri út 122
               <br></br>
+              <PhoneIcon />
               06 30 940-1192
             </Typography>
           </Card>
-        </Box>
+        </Container>
       </Container>
     </Box>
   );

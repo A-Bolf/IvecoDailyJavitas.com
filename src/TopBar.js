@@ -31,8 +31,10 @@ const ResponsiveAppBar = () => {
 
   const handleNavItemClick = (e) => {
     handleCloseNavMenu();
-    //ternary operator is needed to handle navigation on mobile
-    e.target.dataset.route
+    //conditional is needed to handle navigation on mobile
+    console.log(e.target);
+    console.log(e.target.parentElement);
+    e.target.dataset.route !== undefined
       ? navigate(`/${e.target.dataset.route}`)
       : navigate(`/${e.target.parentElement.dataset.route}`);
   };

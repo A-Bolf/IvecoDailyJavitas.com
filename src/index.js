@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import Berles from "./Berles";
 import Kapcsolat from "./Kapcsolat";
+import NotFound from "./NotFound";
 import reportWebVitals from "./reportWebVitals";
 import Layout from "./Layout";
 
@@ -17,6 +18,7 @@ root.render(
           <Route path="" element={<App />} />
           <Route path="berles" element={<Berles />} />
           <Route path="kapcsolat" element={<Kapcsolat />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </Router>

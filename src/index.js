@@ -8,6 +8,7 @@ import Kapcsolat from "./Kapcsolat";
 import NotFound from "./NotFound";
 import reportWebVitals from "./reportWebVitals";
 import { sendToVercelAnalytics } from "./vitals";
+import { Analytics } from "@vercel/analytics/react";
 import Layout from "./Layout";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -23,6 +24,7 @@ root.render(
         </Route>
       </Routes>
     </Router>
+    <Analytics />
   </React.StrictMode>
 );
 
